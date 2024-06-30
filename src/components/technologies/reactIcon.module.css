@@ -1,0 +1,52 @@
+@keyframes rotationne {
+  from {
+    transform:rotate(0);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+.react {
+  --ellipse-color: rgb(97, 219, 251);
+  --ellipse-width: 80px;
+  --ellipse-height: 26px;
+  --ellipse-radius: 50%;
+  --ellipse-border: 5px;
+  width: var(--ellipse-width);
+  height: var(--ellipse-height);
+  border-radius: var(--ellipse-radius);
+  border: solid var(--ellipse-border) var(--ellipse-color);
+  position: relative;
+  display:block;
+  background: radial-gradient(
+    circle,
+    var(--ellipse-color) 15%,
+    transparent 15.4%
+  );
+  animation-name: rotationne;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.react::before,
+.react::after {
+  width: var(--ellipse-width);
+  height: var(--ellipse-height);
+  border-radius: var(--ellipse-radius);
+  border: solid var(--ellipse-border) var(--ellipse-color);
+  position: absolute;
+  content: "";
+  display: block;
+  top: calc(-1 * var(--ellipse-border));
+  left: calc(-1 * var(--ellipse-border));
+}
+
+.react::before {
+  rotate: 60deg;
+}
+
+.react::after {
+  rotate: -60deg;
+}

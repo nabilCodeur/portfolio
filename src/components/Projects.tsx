@@ -1,13 +1,15 @@
-import React from 'react'
+import { projectsGroups, projectsSolo } from "@/utils/projects";
+import CarouselModel from "./CarouselModel";
 
 const Projects = () => {
   return (
-    <div >
-      <h1>Projets</h1>
-      <h2>Projets de groupe</h2>
-      <h2>Projet en solo</h2>
+    <div className="space-y-3">
+      <h2 className="text-xl font-bold uppercase">Projets de groupe</h2>
+      <CarouselModel projects={projectsGroups} />
+      <h2 className="text-xl font-bold uppercase">Projets solo</h2>
+      <CarouselModel projects={projectsSolo} />
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
